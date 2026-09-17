@@ -12,7 +12,7 @@ The biggest challenge I faced in realizing this application was adapting my work
 
 The web app can be accessed at https://a3-dexter-haehnichen.onrender.com/
 
-*Note*: I am aware this pull request was submitted late; I am hoping to use this as my one late assignment that the syllabus 
+*Note*: I am aware this pull request was submitted late; I am hoping to use this as my one late assignment that the syllabus talks about.
 
 ## Technical Achievements
 - **Tech Achievement 1**: I used mongodb to store all user data to ensure persistance even if the server is restarted.
