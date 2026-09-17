@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+  <title>CS4241 Assignment 3</title>
+  <meta charset='utf-8' />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Your own personal number and operaion history. Now with persistent state!">
+  <script src='js/main.js' defer></script>
+  <!--<link rel='stylesheet' href='css/main.css' />-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!-- get rid of favicon error -->
+  <link rel='icon' href='data:;base64,iVBORw0KGgo=' />
+</head>
+
+<body>
+  <nav>
+    <ul class="nav">
+      <li class="nav-item">
+        <p id="user-display" class="nav-link disabled">Not logged in</p>
+      </li>
+      <li class="nav-item">
+        <form action="/logout" method="post">
+          <button class="logout nav-link nav-link" type="submit">Sign out</button>
+          <!--<input type="hidden" name="_csrf" value="<%= csrfToken %>">-->
+        </form>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="container-sm align-center mx-auto">
+    <div class="row">
+      <h1 class="h3">Personal Number</h1>
+      <accumulator-display><small class="text-body-secondary">Right now the number is: </small><strong id="accumulator"
+          class="d-block h2">Awating server
+          data</strong></accumulator-display>
+    </div>
+    <h2 class="h4 mt-4">Change the number</h2>
+    <form id="operation-form" class="form-group row g-2">
+      <div class="form-check">
+        <input type="radio" id="operator-select-add" class="btn-check" name="operator" checked required value="plus" />
+        <label class="btn" for="operator-select-add">&plus;</label>
+
+        <input type="radio" id="operator-select-sub" class="btn-check" name="operator" value="minus" />
+        <label class="btn" for="operator-select-sub">&minus;</label>
+
+        <input type="radio" id="operator-select-mul" class="btn-check" name="operator" value="times" />
+        <label class="btn" for="operator-select-mul">&times;</label>
+
+        <input type="radio" id="operator-select-div" class="btn-check" name="operator" value="divide" />
+        <label class="btn" for="operator-select-div">&divide;</label>
+      </div>
+
+      <div class="col-auto">
+        <label for="value-input" class="visually-hidden">Right-hand value</label>
+        <input type="number" id="value-input" class="form-control col-auto" step="any" required name="value" />
+      </div>
+      <button class="btn btn-primary col-auto" type="submit">submit</button>
+    </form>
+    <h2 id="history-header" class="h4 mt-4">History</h2>
+    <ul id="history-list" class="list-group-flush">
+
+    </ul>
+  </main>
+</body>
+
+</html>

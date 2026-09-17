@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <title>CS4241 Assignment 2</title>
+    <meta charset='utf-8' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src='js/admin.js' defer></script>
+    <link rel='stylesheet' href='css/main.css' />
+
+    <!-- get rid of favicon error -->
+    <link rel='icon' href='data:;base64,iVBORw0KGgo=' />
+</head>
+
+<body>
+    <h1>Admin panel</h1>
+    <p id=status hidden></p>
+    <button class="admin-actions" id="save-history" onclick='document.getElementById("download").click()'>Save history</button>
+    <button class="admin-actions" id="restore-history" onclick="historyFileElement.click();">Restore history</button>
+    <button class="admin-actions" id="delete-history" onclick="deleteHistory();">Delete history</button>
+    <p><a href="/">Return to main page</a></p>
+    <a id="download" href="/data" download="history.json" hidden></a>
+    <input type="file" id="history-file" hidden/>
+</body>
+
+</html>
